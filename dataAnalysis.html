@@ -1,57 +1,143 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="DS3001 - Data Analysis">
-    <link rel="icon" href="images/favicon.ico">
-    <title>DS3001 - Data Analysis</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="DS3001 - Data Analysis">
+  <link rel="icon" href="images/favicon.ico">
+  <title>DS3001 - Data Analysis</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="css/starter-template.css" rel="stylesheet">
-  </head>
+  <!-- CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/dataAnalysis.css" rel="stylesheet">
+  <!-- JS -->
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
 
-  <body>
+<body>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">DS3001</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">DS3001</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="dataVisualization.html">Data Visualization</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Data Analysis <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav> <!-- End navbar -->
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="dataVisualization.html">Data Visualization</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Data Analysis <span class="sr-only">(current)</span></a>
-          </li>
-        </ul>
+  <div class="jumbotron">
+    <div class="container-fluid">
+      <h1 class="display-3">Data Analysis</h1>
+      <p>The following charts help explore our dataset and answer some key questions. </p>
+      <br>
+      <div class="card-group">
+        <div class="card border-primary">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Card Body</p>
+          </div>
+          <div class="card-footer border-primary">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
+            </div>
+        </div> <!-- End card-->
+        <div class="card border-primary">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Card Body</p>
+          </div>
+          <div class="card-footer border-primary">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
+            </div>
+        </div> <!-- End card-->
+        <div class="card border-primary">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Card Body</p>
+          </div>
+          <div class="card-footer border-primary">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
+            </div>
+        </div> <!-- End card-->
+        <div class="card border-primary">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Card Body</p>
+          </div>
+          <div class="card-footer border-primary">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
+            </div>
+        </div> <!-- End card-->
+        <div class="card border-primary">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Card Body</p>
+          </div>
+          <div class="card-footer border-primary">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
+            </div>
+        </div> <!-- End card -->
       </div>
-    </nav>
+    </div> <!-- End card group -->
+  </div> <!-- End jumbotron -->
 
-    <main role="main" class="container">
+  <div id="main-content">
+    <div class="container-fluid" id="">
+      <h2>Accurate Wine Pricing</h2>
+      <p>
+        One important aspect of consuming, currating, or selling wine is how to price it.
+        Our goal was to analyze how the variety of the wine affects its price.
+        We created a box plot to do just this:
+      </p>
+      <div id="boxPlot"></div>
+      <p>
+        <mark>TODO: Add Analysis</mark>
+      </p>
+    </div> <!-- End analysis group -->
+    <div class="container-fluid" id="">
+      <h2>Title</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis nisl felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tempor, risus ut facilisis finibus, ante nulla laoreet nibh, in vehicula nunc justo non dolor. Pellentesque nulla orci, porttitor ac eros non, rhoncus congue massa. Donec faucibus arcu non mi efficitur, vel posuere nunc porttitor. Nullam a tellus odio. Suspendisse sapien turpis, aliquet ut lectus feugiat, posuere commodo erat. Quisque sed libero arcu. Aenean sit amet odio tincidunt, dapibus arcu sed, molestie nisi. Maecenas tempor purus sit amet efficitur facilisis. </p>
+      <div></div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis nisl felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tempor, risus ut facilisis finibus, ante nulla laoreet nibh, in vehicula nunc justo non dolor. Pellentesque nulla orci, porttitor ac eros non, rhoncus congue massa. Donec faucibus arcu non mi efficitur, vel posuere nunc porttitor. Nullam a tellus odio. Suspendisse sapien turpis, aliquet ut lectus feugiat, posuere commodo erat. Quisque sed libero arcu. Aenean sit amet odio tincidunt, dapibus arcu sed, molestie nisi. Maecenas tempor purus sit amet efficitur facilisis. </p>
+    </div> <!-- End analysis group -->
+    <div class="container-fluid" id="">
+      <h2>Title</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis nisl felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tempor, risus ut facilisis finibus, ante nulla laoreet nibh, in vehicula nunc justo non dolor. Pellentesque nulla orci, porttitor ac eros non, rhoncus congue massa. Donec faucibus arcu non mi efficitur, vel posuere nunc porttitor. Nullam a tellus odio. Suspendisse sapien turpis, aliquet ut lectus feugiat, posuere commodo erat. Quisque sed libero arcu. Aenean sit amet odio tincidunt, dapibus arcu sed, molestie nisi. Maecenas tempor purus sit amet efficitur facilisis. </p>
+      <div></div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis nisl felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tempor, risus ut facilisis finibus, ante nulla laoreet nibh, in vehicula nunc justo non dolor. Pellentesque nulla orci, porttitor ac eros non, rhoncus congue massa. Donec faucibus arcu non mi efficitur, vel posuere nunc porttitor. Nullam a tellus odio. Suspendisse sapien turpis, aliquet ut lectus feugiat, posuere commodo erat. Quisque sed libero arcu. Aenean sit amet odio tincidunt, dapibus arcu sed, molestie nisi. Maecenas tempor purus sit amet efficitur facilisis. </p>
+    </div> <!-- End analysis group -->
+    <div class="container-fluid" id="">
+      <h2>Title</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis nisl felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tempor, risus ut facilisis finibus, ante nulla laoreet nibh, in vehicula nunc justo non dolor. Pellentesque nulla orci, porttitor ac eros non, rhoncus congue massa. Donec faucibus arcu non mi efficitur, vel posuere nunc porttitor. Nullam a tellus odio. Suspendisse sapien turpis, aliquet ut lectus feugiat, posuere commodo erat. Quisque sed libero arcu. Aenean sit amet odio tincidunt, dapibus arcu sed, molestie nisi. Maecenas tempor purus sit amet efficitur facilisis. </p>
+      <div></div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis nisl felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tempor, risus ut facilisis finibus, ante nulla laoreet nibh, in vehicula nunc justo non dolor. Pellentesque nulla orci, porttitor ac eros non, rhoncus congue massa. Donec faucibus arcu non mi efficitur, vel posuere nunc porttitor. Nullam a tellus odio. Suspendisse sapien turpis, aliquet ut lectus feugiat, posuere commodo erat. Quisque sed libero arcu. Aenean sit amet odio tincidunt, dapibus arcu sed, molestie nisi. Maecenas tempor purus sit amet efficitur facilisis. </p>
+    </div> <!-- End analysis group -->
+  </div><!-- End of content -->
 
-      <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
-
-    </main><!-- /.container -->
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/dataAnalysis.js"></script>
+</body>
 </html>
