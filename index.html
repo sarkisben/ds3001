@@ -11,7 +11,8 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/starter-template.css" rel="stylesheet">
+    <link href="css/jumbotron.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   </head>
 
   <body>
@@ -37,14 +38,49 @@
       </div>
     </nav>
 
-    <main role="main" class="container">
+    <main role="main">
 
-      <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">The Sommeliers</h1>
+          <h2 class="display-4">Wine Data Analysis and Visualization</h2>
+          <p>This project was completed as the term project for DS 3001: Introduction to Data Science.
+          We gathered and analyzed a dataset of wine reviews from <a href="https://www.kaggle.com/zynicide/wine-reviews">Kaggle</a>.
+          In completion of this project we hope to allow wineries, stores, and sommeliers to better understand which wines are the most popular and what prices they sell for.
+          More information on how we accomplished this goal and the original dataset to download can be found below.
+        </p>
+          <p><a class="btn btn-info btn-lg" href="#" role="button">Original Dataset <i class="fas fa-download"></i></a></p>
+        </div>
       </div>
 
-    </main><!-- /.container -->
+      <div class="container">
+        <div class="card-deck">
+          <div class="card border-dark">
+            <img class="card-img-top border-dark" src="..." alt="Data Visualization snippit">
+            <div class="card-body">
+              <h5 class="card-title">Data Visualization</h5>
+              <p class="card-text"><em>TODO</em></p>
+            </div>
+            <div class="card-footer">
+              <a class="btn btn-primary btn-lg" href="dataVisualization.html" role="button">Data Visualization &raquo;</a>
+            </div>
+          </div>
+          <div class="card border-dark">
+            <img class="card-img-top" src="..." alt="Data Analysis snippit">
+            <div class="card-body">
+              <h5 class="card-title">Data Analysis</h5>
+              <p class="card-text"><em>TODO</em></p>
+            </div>
+            <div class="card-footer">
+              <a class="btn btn-primary btn-lg" href="dataAnalysis.html" role="button">Data Analysis &raquo;</a>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- /container -->
+
+    </main>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
