@@ -4,9 +4,9 @@ function getTopVarieties(data, n){
   var varieties = []
   data.forEach(function(d) {
     if(!(d.variety in varieties)){
-      varieties[d.variety] = 1
+      varieties[d.variety] = 1;
     } else{
-      varieties[d.variety] += 1
+      varieties[d.variety] += 1;
     }
   });
   // Sort the values in descending order and select top 10

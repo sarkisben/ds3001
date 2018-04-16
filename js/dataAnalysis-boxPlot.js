@@ -9,7 +9,6 @@ function performAnalysis() {
       variety : d.variety
     };
   }, function(data) {
-    console.log(data);
     makePriceBoxPlot(data);
   });
 };
