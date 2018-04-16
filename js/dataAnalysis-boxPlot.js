@@ -1,6 +1,6 @@
 // Read CSV and create graphs
 function performAnalysis() {
-  d3.csv("../dataset/wineData_CLEAN.csv", function(d) {
+  d3.csv("./dataset/wineData_CLEAN.csv", function(d) {
     return {
       country : d.country,
       points : +d.points,
