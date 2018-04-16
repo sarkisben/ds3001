@@ -29,7 +29,6 @@ function makeOverallPieChart(data){
   for (var c in countries) {
     countryList.push([c, countries[c]]);
   }
-
   // Create the plot data by ...
   var labels = [];
   var values = [];
