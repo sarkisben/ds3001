@@ -13,3 +13,7 @@ body {
 .container-fluid{
   padding-bottom: 2rem;
 }
+
+.view-more{
+  background-color: #e0e0e0;
+}

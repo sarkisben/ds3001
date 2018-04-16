@@ -43,66 +43,6 @@
     </div>
   </nav> <!-- End navbar -->
 
-  <div class="jumbotron">
-    <div class="container-fluid">
-      <h1 class="display-3">Data Analysis</h1>
-      <p>The following charts help explore our dataset and answer some key questions. </p>
-      <br>
-      <div class="card-group">
-        <div class="card border-primary">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Card Body</p>
-          </div>
-          <div class="card-footer border-primary">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
-          </div>
-        </div> <!-- End card-->
-        <div class="card border-primary">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Card Body</p>
-          </div>
-          <div class="card-footer border-primary">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
-          </div>
-        </div> <!-- End card-->
-        <div class="card border-primary">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Card Body</p>
-          </div>
-          <div class="card-footer border-primary">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
-          </div>
-        </div> <!-- End card-->
-        <div class="card border-primary">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Card Body</p>
-          </div>
-          <div class="card-footer border-primary">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
-          </div>
-        </div> <!-- End card-->
-        <div class="card border-primary">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Card Body</p>
-          </div>
-          <div class="card-footer border-primary">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
-          </div>
-        </div> <!-- End card -->
-      </div>
-    </div> <!-- End card group -->
-  </div> <!-- End jumbotron -->
-
   <div id="main-content">
     <div class="container-fluid" id="">
       <h2>Correlating Wine Price and Quality</h2>
@@ -113,21 +53,67 @@
       </p>
       <div id="scatterplot"></div>
       <p>
-        <mark>TODO: Add Analysis</mark>
-        Note: For this analysis we used the top five most frequent wine to fit
-        within performance constraints.
+        Observing the trend of the scatterplot as a whole it seems that there is a
+        positive correlation between quality and price in wines. This trend is strongest
+        towards the lower prices ($0 - $50) but becomes a more neutral correlation towards
+        the more expensive bottles ($60 - $120). From this correlation we are able to make the
+        following conclusion: there is a differnce between less and more expensive bottles of wine,
+        until a certain point. Until about $60, more money buys a better bottle of wine. But after $60
+        there are diminishing returns on the more expensive bottles.
       </p>
-    </div> <!-- End analysis group -->
-  </div><!-- End of content -->
+      <p>
+        Looking at the individual varieties of wine, it does not seem that there
+        is any significant deveation from the initial trend described above. All wines
+        fall under the diminishing returns of quality per price of the bottle.
+      </p>
+      <p>
+        <em>Note: For this analysis we used the top five most frequent wine to fit
+          within performance constraints.</em>
+        </p>
+      </div> <!-- End analysis group -->
+    </div><!-- End of content -->
 
-  <!-- Bootstrap core JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="../js/jquery-slim.min.js"><\/script>')</script>
-  <script src="../js/popper.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
-  <script src="../js/dataAnalysis.js"></script>
-  <script src="../js/dataAnalysis-scatterplot.js"></script>
-</body>
-</html>
+    <div class="container-fluid view-more">
+      <h2>View More</h2>
+      <div class="card-group">
+        <div class="card border-primary">
+          <img class="card-img-top" src="../images/boxplot.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Accurate Wine Pricing</h5>
+          </div>
+          <div class="card-footer border-primary">
+            <a class="btn btn-primary btn-lg" href="price-vs-variety.html" role="button">Explore &raquo;</a>
+          </div>
+        </div> <!-- End card-->
+        <div class="card border-secondary">
+          <img class="card-img-top" src="../images/scatterplot.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Correlating Wine Price and Quality</h5>
+            <p class="card-text">
+            </div>
+            <div class="card-footer border-secondary">
+              <a class="btn btn-secondary btn-lg" href="quality-vs-price.html" role="button">Explore &raquo;</a>
+            </div>
+          </div> <!-- End card-->
+          <div class="card border-primary">
+            <img class="card-img-top" src="../images/piechart.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Individual Country Marketshare</h5>
+            </div>
+            <div class="card-footer border-primary">
+              <a class="btn btn-primary btn-lg" href="variety-vs-country.html" role="button">Explore &raquo;</a>
+            </div>
+          </div> <!-- End card-->
+        </div>
+      </div>
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../js/jquery-slim.min.js"><\/script>')</script>
+      <script src="../js/popper.min.js"></script>
+      <script src="../js/bootstrap.min.js"></script>
+      <script src="../js/dataAnalysis.js"></script>
+      <script src="../js/dataAnalysis-scatterplot.js"></script>
+    </body>
+    </html>

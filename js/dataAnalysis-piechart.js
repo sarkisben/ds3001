@@ -1,6 +1,6 @@
 // Read CSV and create graphs
 function performAnalysis() {
-  d3.csv("wineData_CLEAN.csv", function(d) {
+  d3.csv("../dataset/wineData_CLEAN.csv", function(d) {
     return {
       country : d.country,
       points : +d.points,
@@ -61,12 +61,7 @@ function makeVarietiesPieChart(data){
   var plotData = [];
   var outputLocations = ['piechart-varieties1','piechart-varieties2','piechart-varieties3'];
   var cnt = 0;
-  var layout = {
-    title: 'Accurate Wine Pricing',
-    height: 400,
-    width: 500
-  };
-  topVarieties.forEach(function(topD) {
+topVarieties.forEach(function(topD) {
     // Get the country list for this Variety
     var countries = []
     data.forEach(function(d) {
@@ -99,6 +94,11 @@ function makeVarietiesPieChart(data){
       type: 'pie'
     }];
     // Put chart on page
+    var layout = {
+      title: 'Individual Country Marketshare (' + topD[0] + ')',
+      height: 400,
+      width: 500
+    };
     Plotly.newPlot(outputLocations[cnt++], plotData, layout);
   });
 };

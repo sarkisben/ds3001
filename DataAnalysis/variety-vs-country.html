@@ -44,66 +44,6 @@
     </div>
   </nav> <!-- End navbar -->
 
-  <div class="jumbotron">
-    <div class="container-fluid">
-      <h1 class="display-3">Data Analysis</h1>
-      <p>The following charts help explore our dataset and answer some key questions. </p>
-      <br>
-      <div class="card-group">
-        <div class="card border-primary">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Card Body</p>
-          </div>
-          <div class="card-footer border-primary">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
-          </div>
-        </div> <!-- End card-->
-        <div class="card border-primary">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Card Body</p>
-          </div>
-          <div class="card-footer border-primary">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
-          </div>
-        </div> <!-- End card-->
-        <div class="card border-primary">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Card Body</p>
-          </div>
-          <div class="card-footer border-primary">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
-          </div>
-        </div> <!-- End card-->
-        <div class="card border-primary">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Card Body</p>
-          </div>
-          <div class="card-footer border-primary">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
-          </div>
-        </div> <!-- End card-->
-        <div class="card border-primary">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Card Body</p>
-          </div>
-          <div class="card-footer border-primary">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
-          </div>
-        </div> <!-- End card -->
-      </div>
-    </div> <!-- End card group -->
-  </div> <!-- End jumbotron -->
-
   <div id="main-content">
     <div class="container-fluid" id="">
       <h2>Individual Country Marketshare</h2>
@@ -116,21 +56,32 @@
       </p>
       <div id="piechart"></div>
       <p>
-        <mark>TODO: Add Analysis</mark>
+        From the initial pie chart, it is clear that the United States grows the largest share
+        of wine grapes. The US grows 44.9% while the next lergest country (France)
+        grows only 14.7%. While this is true of the wine market in general, does it hold
+        true on a more granular level?
       </p>
     </div> <!-- End analysis group -->
     <div class="container-fluid" id="">
       <h2>Individual Country Marketshare by Variety</h2>
       <p>
-        <mark>TODO: Add Description</mark>
-      </p>
+        In order to get a better picture of the market, it is important to take a closer
+        look at a particular market. The Pinot Noir or Chardonnary market for example.
+        A wine grower looking to grow a particular type of grape would want to get a better
+        picture of their market by sectioning the results shown above into more specific pie charts.
+        </p>
       <div class="row">
         <div class="col-md-4" id="piechart-varieties1"></div>
         <div class="col-md-4" id="piechart-varieties2"></div>
         <div class="col-md-4" id="piechart-varieties3"></div>
       </div>
       <p>
-        <mark>TODO: Add Analysis</mark>
+        On a more granular level, the US is still the largest grower but it shows where
+        other countries do better or worse. For example, while France grows only 14.7%
+        of the total wine grapes they rise to 20.5% when observing their growing for just
+        Chardonnay. This is an important conclusion for a French grower; there must be some
+        reason that only 12.4% of the Pinot Noir grapes are grown in France so they would
+        benefit more to focus on growing Chardonnay grapes.
         </p>
         <p>
         Note: For the final three pie charts we used only the top ten countries in
@@ -140,6 +91,39 @@
     </div> <!-- End analysis group -->
   </div><!-- End of content -->
 
+  <div class="container-fluid view-more">
+    <h2>View More</h2>
+    <div class="card-group">
+      <div class="card border-primary">
+        <img class="card-img-top" src="../images/boxplot.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Accurate Wine Pricing</h5>
+        </div>
+        <div class="card-footer border-primary">
+          <a class="btn btn-primary btn-lg" href="price-vs-variety.html" role="button">Explore &raquo;</a>
+        </div>
+      </div> <!-- End card-->
+      <div class="card border-primary">
+        <img class="card-img-top" src="../images/scatterplot.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Correlating Wine Price and Quality</h5>
+          <p class="card-text">
+          </div>
+          <div class="card-footer border-primary">
+            <a class="btn btn-primary btn-lg" href="quality-vs-price.html" role="button">Explore &raquo;</a>
+          </div>
+        </div> <!-- End card-->
+        <div class="card border-secondary">
+          <img class="card-img-top" src="../images/piechart.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Individual Country Marketshare</h5>
+          </div>
+          <div class="card-footer border-secondary">
+            <a class="btn btn-secondary btn-lg" href="variety-vs-country.html" role="button">Explore &raquo;</a>
+          </div>
+        </div> <!-- End card-->
+      </div>
+    </div>
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
