@@ -1,6 +1,6 @@
 // Read CSV and create graphs
 function performAnalysis() {
-  d3.csv("dataset/wineData_CLEAN.csv", function(d) {
+  d3.csv("wineData_CLEAN.csv", function(d) {
     return {
       country : d.country,
       points : +d.points,
@@ -15,7 +15,7 @@ function performAnalysis() {
 
 // Create the price / quality scatterplot
 function makePriceScatterPlot(data){
-  var topVarieties = getTopVarieties(data, 10);
+  var topVarieties = getTopVarieties(data, 5);
   // For each of the top ten varieties...
   var plotData = [];
   topVarieties.forEach(function(topD) {
@@ -48,7 +48,7 @@ function makePriceScatterPlot(data){
     xaxis: {title: 'Price'},
     yaxis: {title: 'Quality'}
   };
-  Plotly.newPlot('scatterPlot', plotData, layout);
+  Plotly.newPlot('scatterplot', plotData, layout);
 };
 
 performAnalysis();

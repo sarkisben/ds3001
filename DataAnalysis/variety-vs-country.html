@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="DS3001 - Data Analysis">
+  <link rel="icon" href="../images/favicon.ico">
+  <title>Data Analysis - Variety vs. Country</title>
+
+  <!-- CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/dataAnalysis.css" rel="stylesheet">
+  <!-- JS -->
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
+  <script src="../js/plotly-latest.min.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">DS3001</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../dataVisualization.html">Data Visualization</a>
+        </li>
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data Analysis</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="price-vs-variety.html">Price / Variety</a>
+            <a class="dropdown-item" href="quality-vs-price.html">Quality / Price</a>
+            <a class="dropdown-item active" href="#">Variety / Country <span class="sr-only">(current)</span></a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav> <!-- End navbar -->
+
+  <div class="jumbotron">
+    <div class="container-fluid">
+      <h1 class="display-3">Data Analysis</h1>
+      <p>The following charts help explore our dataset and answer some key questions. </p>
+      <br>
+      <div class="card-group">
+        <div class="card border-primary">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Card Body</p>
+          </div>
+          <div class="card-footer border-primary">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
+          </div>
+        </div> <!-- End card-->
+        <div class="card border-primary">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Card Body</p>
+          </div>
+          <div class="card-footer border-primary">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
+          </div>
+        </div> <!-- End card-->
+        <div class="card border-primary">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Card Body</p>
+          </div>
+          <div class="card-footer border-primary">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
+          </div>
+        </div> <!-- End card-->
+        <div class="card border-primary">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Card Body</p>
+          </div>
+          <div class="card-footer border-primary">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
+          </div>
+        </div> <!-- End card-->
+        <div class="card border-primary">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Card Body</p>
+          </div>
+          <div class="card-footer border-primary">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
+          </div>
+        </div> <!-- End card -->
+      </div>
+    </div> <!-- End card group -->
+  </div> <!-- End jumbotron -->
+
+  <div id="main-content">
+    <div class="container-fluid" id="">
+      <h2>title</h2>
+      <p>
+        description
+      </p>
+      <div id="pieChart"></div>
+      <p>
+        <mark>TODO: Add Analysis</mark>
+      </p>
+    </div> <!-- End analysis group -->
+  </div><!-- End of content -->
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../js/jquery-slim.min.js"><\/script>')</script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/dataAnalysis.js"></script>
+  <script src="../js/dataAnalysis-piechart.js"></script>
+</body>
+</html>
