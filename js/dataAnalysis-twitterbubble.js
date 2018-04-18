@@ -42,7 +42,9 @@ function makeBubbleChart(){
 
   // Put chart on page
   var layout = {
-   title: 'Twitter Popularity'
+   title: 'Twitter Popularity',
+   xaxis: {title: 'Wine Variety'},
+   yaxis: {title: 'Number of Tweets'}
   };
 
   Plotly.newPlot('bubblechart', data, layout);
