@@ -28,6 +28,7 @@ function makeOverallPieChart(){
   var tracer = {
    x: winenames,
    y: tweets,
+   mode: 'markers',
    marker: {
     size: tweets
    }
@@ -39,6 +40,7 @@ function makeOverallPieChart(){
   var layout = {
    title: 'Twitter Popularity'
   };
+  
   Plotly.newPlot('bubblechart', data, layout);
 };
 
