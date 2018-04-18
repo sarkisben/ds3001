@@ -1,43 +1,46 @@
 var sayjohn = [
-                { "Name": "Cabernet Sauvignon", "Tweets": 86 },
-                { "Name": "Red Blend", "Tweets": 14 },
-                { "Name": "Rose", "Tweets": 200 },
-                { "Name": "Pinot Noir", "Tweets": 67 },
-                { "Name": "Chardonnay", "Tweets": 94 },
-                { "Name": "Sauvignon Blanc", "Tweets": 27 },
-                { "Name": "Merlot", "Tweets": 200 },
-                { "Name": "Syrah", "Tweets": 93 },
-                { "Name": "Bordeaux-style Red Blend", "Tweets": 5 },
-                { "Name": "Riesling", "Tweets": 200 }
+                { "name": "Cabernet Sauvignon", "tweets": 86 },
+                { "name": "Red Blend", "tweets": 14 },
+                { "name": "Rose", "tweets": 200 },
+                { "name": "Pinot Noir", "tweets": 67 },
+                { "name": "Chardonnay", "tweets": 94 },
+                { "name": "Sauvignon Blanc", "tweets": 27 },
+                { "name": "Merlot", "tweets": 200 },
+                { "name": "Syrah", "tweets": 93 },
+                { "name": "Bordeaux-style Red Blend", "tweets": 5 },
+                { "name": "Riesling", "tweets": 200 }
               ];
+
 // Create the bubble graph
 function makeBubbleChart(){
   //Get unique varieties and occurances
   var winenames = []
   var tweets = []
-  for (var i = 0; i < sayjohn.length; i++){
-    var obj = sayjohn[i];
-    for (var key in obj){
-     winenames.push(key);
-     tweets.push(obj[key]);
-    }
-  }
-
-  var plotData = [];
+  // for (var i = 0; i < sayjohn.length; i++){
+  //   var obj = sayjohn[i];
+  //   for (var key in obj){
+  //    winenames.push(key);
+  //    tweets.push(obj[key]);
+  //   }
+  // }
+  sayjohn.forEach(function(d) {
+    winenames.push(d.name);
+    tweets.push(d.tweets);
+  });
 
   //... adding to chart
-  var tracer = {
+  var trace = {
    x: winenames,
    y: tweets,
+   mode: 'markers',
    marker: {
-    size: tweets,
-    mode: 'markers'
+     size: tweets
    }
   };
 
-  var data = [tracer];
+  var data = [trace];
 
-  Put chart on page
+  // Put chart on page
   var layout = {
    title: 'Twitter Popularity'
   };
