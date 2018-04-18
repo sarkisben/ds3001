@@ -10,7 +10,7 @@ var sayjohn = {
                          },
                          {
                            "Name": "Rose", 
-                           "Tweets: 200
+                           "Tweets": 200
                          },
                          {
                            "Name": "Pinot Noir",
