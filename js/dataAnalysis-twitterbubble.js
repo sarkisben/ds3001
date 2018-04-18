@@ -9,7 +9,7 @@ var sayjohn = [
                 { "Name": "Syrah", "Tweets": 93 },
                 { "Name": "Bordeaux-style Red Blend", "Tweets": 5 },
                 { "Name": "Riesling", "Tweets": 200 }
-              ]
+              ];
 // Create the bubble graph
 function makeOverallPieChart(){
   //Get unique varieties and occurances
@@ -39,7 +39,7 @@ function makeOverallPieChart(){
   var layout = {
    title: 'Twitter Popularity'
   };
-  Plotly.newPlot('bubblechart', plotData, layout);
+  Plotly.newPlot('bubblechart', data, layout);
 };
 
 makeOverallPieChart();
