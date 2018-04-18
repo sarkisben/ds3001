@@ -11,7 +11,7 @@ var sayjohn = [
                 { "Name": "Riesling", "Tweets": 200 }
               ];
 // Create the bubble graph
-function makeOverallPieChart(){
+function makeBubbleChart(){
   //Get unique varieties and occurances
   var winenames = []
   var tweets = []
@@ -23,14 +23,15 @@ function makeOverallPieChart(){
     }
   }
 
+  var plotData = [];
 
   //... adding to chart
   var tracer = {
    x: winenames,
    y: tweets,
-   mode: 'markers',
    marker: {
-    size: tweets
+    size: tweets,
+    mode: 'markers'
    }
   };
 
@@ -40,8 +41,8 @@ function makeOverallPieChart(){
   var layout = {
    title: 'Twitter Popularity'
   };
-  
+
   Plotly.newPlot('bubblechart', data, layout);
 };
 
-makeOverallPieChart();
+makeBubbleChart();
