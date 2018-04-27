@@ -33,10 +33,11 @@ function makeOverallPieChart(data){
   var labels = [];
   var values = [];
   // ... collecting data points ...
-  countryList.forEach(function(d) {
-    labels.push(d[0]);
-    values.push(d[1]);
-  });
+  var i;
+  for (i = 0; i < 10; i++) {
+      labels.push(countryList[i][0]);
+      values.push(countryList[i][1]);
+  }
 
   // ... adding to chart
   var plotData = [{

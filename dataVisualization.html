@@ -12,6 +12,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link href="css/starter-template.css" rel="stylesheet">
+  <link href="css/map.css" rel="stylesheet">
 </head>
 
 <body>
@@ -36,6 +37,7 @@
             <a class="dropdown-item" href="DataAnalysis/price-vs-variety.html">Price / Variety</a>
             <a class="dropdown-item" href="DataAnalysis/quality-vs-price.html">Quality / Price</a>
             <a class="dropdown-item" href="DataAnalysis/variety-vs-country.html">Variety / Country</a>
+            <a class="dropdown-item" href="DataAnalysis/twitter-analysis.html">Twitter Analysis</a>
           </div>
         </li>
       </ul>
@@ -43,10 +45,8 @@
   </nav>
 
   <main role="main" class="container">
-
-    <div class="starter-template">
-      <h1>Bootstrap starter template</h1>
-      <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+    <p> Map of <select id ="varietySelect"> </select></p>
+    <div id = "mapDiv">
     </div>
 
   </main><!-- /.container -->
@@ -58,5 +58,72 @@
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-slim.min.js"><\/script>')</script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+<script src="https://unpkg.com/topojson@3"></script>
+<script>
+var projection = d3.geoEquirectangular().scale(250).translate([650, 325]);
+var svg = d3.select('#mapDiv')
+.append("svg")
+.style("background-color", "lightblue")
+.attr("height", 650)
+.attr("width", 1350);
+
+var path = d3.geoPath()
+    .projection(projection);
+
+
+
+d3.csv("dataset/wineData_CLEAN.csv", undefined,callback = function(error, data) {
+  varietyCounts = {};
+  selectedData = [];
+  var varietySelect = document.getElementById("varietySelect");
+  for (let i =0; i < data.length; i++){
+    if (varietyCounts[data[i]['variety']]=== undefined){
+      varietyCounts[data[i]['variety']] = 1;
+      var option = document.createElement("option");
+      option.text = data[i]['variety'];
+      varietySelect.add(option);
+    }else{
+      varietyCounts[data[i]['variety']] +=1;
+    }
+    if (data[i]['variety'] === "Chardonnay")
+    {
+      selectedData.push(data[i]);
+    }
+  }
+
+  d3.json("https://gist.githubusercontent.com/abenrob/787723ca91772591b47e/raw/8a7f176072d508218e120773943b595c998991be/world-50m.json", (error, world)=>{
+  var graticule = d3.geoGraticule();
+
+  svg.append("g")
+		  		.attr("class", "land")
+				.selectAll("path")
+		  		.data([topojson.feature(world, world.objects.land)])
+			    .enter().append("path")
+			    .attr("d", path)
+
+
+			svg.append("g")
+		  		.attr("class", "boundary")
+				.selectAll("boundary")
+		  		.data([topojson.feature(world, world.objects.countries)])
+			    .enter().append("path")
+			    .attr("d", path);
+
+        svg.selectAll("circle")
+        .data(selectedData)
+        .enter()
+        .append("circle")
+        .attr("r",1.5)
+        .attr("fill", "red" )
+        .attr("fill-opacity", .1)
+        .attr("transform", function(d) {return "translate(" + projection([Number(d.lng),Number(d.lat)]) + ")";});
+    });
+  });
+
+
+</script>
 </body>
 </html>
