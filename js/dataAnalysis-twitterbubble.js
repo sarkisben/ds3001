@@ -1,31 +1,28 @@
-var sayjohn = [
-                { "name": "Cabernet Sauvignon", "tweets": 86 },
-                { "name": "Red Blend", "tweets": 14 },
-                { "name": "Rose", "tweets": 200 },
-                { "name": "Pinot Noir", "tweets": 67 },
-                { "name": "Chardonnay", "tweets": 94 },
-                { "name": "Sauvignon Blanc", "tweets": 27 },
-                { "name": "Merlot", "tweets": 200 },
-                { "name": "Syrah", "tweets": 93 },
-                { "name": "Bordeaux-style Red Blend", "tweets": 5 },
-                { "name": "Riesling", "tweets": 200 }
-              ];
 
+function performAnalysis(){
+  d3.json("../twitter.json", function(json){
+    return {
+      Wine: json.Wine,
+      TotalTweets: +json.TotalTweets,
+      Retweets: +json.Retweets,
+      Favorited: +json.Favorited
+    };
+  }, function (data){
+    makeBubbleChart(data);
+  });
+};
 // Create the bubble graph
-function makeBubbleChart(){
-  //Get unique varieties and occurances
-  var winenames = []
-  var tweets = []
-  // for (var i = 0; i < sayjohn.length; i++){
-  //   var obj = sayjohn[i];
-  //   for (var key in obj){
-  //    winenames.push(key);
-  //    tweets.push(obj[key]);
-  //   }
-  // }
-  sayjohn.forEach(function(d) {
-    winenames.push(d.name);
-    tweets.push(d.tweets);
+function makeBubbleChart(data){
+  var winenames = [];
+  var retweets = [];
+  var favorites = [];
+  var tweets = [];
+
+  data.forEach(function(d) {
+    winenames.push(d.Wine);
+    tweets.push(d.TotalTweets);
+    favorites.push(d.Favorited);
+    retweets.push(d.Retweets);
   });
 
   //... adding to chart
@@ -34,11 +31,11 @@ function makeBubbleChart(){
    y: tweets,
    mode: 'markers',
    marker: {
-     size: tweets
+     size: retweets
    }
   };
 
-  var data = [trace];
+  var outdata = [trace];
 
   // Put chart on page
   var layout = {
@@ -50,4 +47,4 @@ function makeBubbleChart(){
   Plotly.newPlot('bubblechart', data, layout);
 };
 
-makeBubbleChart();
+performAnalysis();
