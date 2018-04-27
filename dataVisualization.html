@@ -61,7 +61,7 @@
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/d3-geo.v1.min.js"></script>
 <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
-<script src="http://d3js.org/topojson.v0.min.js"></script>
+<script src="https://unpkg.com/topojson@3"></script>
 <script>
 var projection = d3.geoEquirectangular().scale(250).translate([650, 325]);
 var svg = d3.select('#mapDiv')
@@ -100,7 +100,7 @@ d3.csv("dataset/wineData_CLEAN.csv", undefined,callback = function(error, data) 
   svg.append("g")
 		  		.attr("class", "land")
 				.selectAll("path")
-		  		.data([topojson.object(world, world.objects.land)])
+		  		.data([topojson.feature(world, world.objects.land)])
 			    .enter().append("path")
 			    .attr("d", path)
 
@@ -108,7 +108,7 @@ d3.csv("dataset/wineData_CLEAN.csv", undefined,callback = function(error, data) 
 			svg.append("g")
 		  		.attr("class", "boundary")
 				.selectAll("boundary")
-		  		.data([topojson.object(world, world.objects.countries)])
+		  		.data([topojson.feature(world, world.objects.countries)])
 			    .enter().append("path")
 			    .attr("d", path);
 
