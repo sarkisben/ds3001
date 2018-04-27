@@ -44,7 +44,7 @@
     </div>
   </nav>
 
-  <main role="main" class="container">
+  <main role="main" class="container" style="margin-left:0px; padding-left: 0px">
     <p> Map of <select id ="varietySelect"> </select></p>
     <div id = "mapDiv">
     </div>
@@ -63,19 +63,41 @@
 <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 <script src="https://unpkg.com/topojson@3"></script>
 <script>
-var projection = d3.geoEquirectangular().scale(250).translate([650, 325]);
+function updateData(selection){
+  selectedData = [];
+  for (let i =0; i < data.length; i++){
+    if (data[i]['variety'] === selection)
+    {
+      selectedData.push(data[i]);
+    }
+  }
+}
+function renderMap(){
+  d3.selectAll("circle").remove();
+  svg.selectAll("circle")
+  .data(selectedData)
+  .enter()
+  .append("circle")
+  .attr("r",1.5)
+  .attr("fill", "red" )
+  .attr("fill-opacity", .1)
+  .attr("transform", function(d) {return "translate(" + projection([Number(d.lng),Number(d.lat)]) + ")";});
+}
+var projection = d3.geoEquirectangular().scale(350).translate([820, 435]);
 var svg = d3.select('#mapDiv')
 .append("svg")
 .style("background-color", "lightblue")
-.attr("height", 650)
-.attr("width", 1350);
+.attr("height", 800)
+.attr("width", 1920);
 
 var path = d3.geoPath()
     .projection(projection);
 
-
-
-d3.csv("dataset/wineData_CLEAN.csv", undefined,callback = function(error, data) {
+selectedData = [];
+var data;
+var varitiesCount;
+d3.csv("dataset/wineData_CLEAN.csv", undefined,callback = function(error, indata) {
+  data = indata;
   varietyCounts = {};
   selectedData = [];
   var varietySelect = document.getElementById("varietySelect");
@@ -88,12 +110,15 @@ d3.csv("dataset/wineData_CLEAN.csv", undefined,callback = function(error, data) 
     }else{
       varietyCounts[data[i]['variety']] +=1;
     }
-    if (data[i]['variety'] === "Chardonnay")
+    if (data[i]['variety'] === "Sauvignon Blanc")
     {
       selectedData.push(data[i]);
     }
   }
-
+  varietySelect.onchange = (e,d)=>{
+    updateData($(varietySelect).val());
+    renderMap();
+  };
   d3.json("https://gist.githubusercontent.com/abenrob/787723ca91772591b47e/raw/8a7f176072d508218e120773943b595c998991be/world-50m.json", (error, world)=>{
   var graticule = d3.geoGraticule();
 
@@ -118,7 +143,7 @@ d3.csv("dataset/wineData_CLEAN.csv", undefined,callback = function(error, data) 
         .append("circle")
         .attr("r",1.5)
         .attr("fill", "red" )
-        .attr("fill-opacity", .1)
+        .attr("fill-opacity", .4)
         .attr("transform", function(d) {return "translate(" + projection([Number(d.lng),Number(d.lat)]) + ")";});
     });
   });
