@@ -1,27 +1,31 @@
+var mayson = [{"Favorited": 94, "TotalTweets": 57, "Retweets": 92, "Wine": "Pinot Noir"}, 
+              {"Favorited": 206, "TotalTweets": 200, "Retweets": 1358, "Wine": "Chardonnay"}, 
+              {"Favorited": 207, "TotalTweets": 77, "Retweets": 353, "Wine": "Cabernet Sauvignon"}, 
+              {"Favorited": 24, "TotalTweets": 9, "Retweets": 6, "Wine": "Red Blend"}, 
+              {"Favorited": 3, "TotalTweets": 1, "Retweets": 0, "Wine": "Bordeaux-style Red Blend"}, 
+              {"Favorited": 290, "TotalTweets": 200, "Retweets": 409, "Wine": "Riesling"}, 
+              {"Favorited": 9, "TotalTweets": 10, "Retweets": 2, "Wine": "Sauvignon Blanc"}, 
+              {"Favorited": 266, "TotalTweets": 200, "Retweets": 986, "Wine": "Syrah"}, 
+              {"Favorited": 69, "TotalTweets": 200, "Retweets": 91736, "Wine": "Rose"}, 
+              {"Favorited": 805, "TotalTweets": 200, "Retweets": 2189, "Wine": "Merlot"}]
 
-function performAnalysis(){
-  d3.json("../twitter.json", function(json){
-    return {
-      Wine: json.Wine,
-      TotalTweets: +json.TotalTweets,
-      Retweets: +json.Retweets,
-      Favorited: +json.Favorited
-    };
-  }, function (data){
-    makeBubbleChart(data);
-  });
-};
+function times(a, b){
+  return a/(1/b)
+}
+
 // Create the bubble graph
-function makeBubbleChart(data){
+function makeBubbleChart(){
   var winenames = [];
-  var retweets = [];
   var favorites = [];
+  var favoritesRetweets = [];
   var tweets = [];
+  var retweets = [];
 
-  data.forEach(function(d) {
+  mayson.forEach(function(d) {
     winenames.push(d.Wine);
     tweets.push(d.TotalTweets);
     favorites.push(d.Favorited);
+    favoritesRetweets.push("Favorited "+d.Favorited+" times. </br>Retweeted "+d.Retweets+" times.");
     retweets.push(d.Retweets);
   });
 
@@ -29,13 +33,18 @@ function makeBubbleChart(data){
   var trace = {
    x: winenames,
    y: tweets,
+   text: favoritesRetweets,
    mode: 'markers',
    marker: {
-     size: retweets
+     size: favorites,
+     sizemode: 'area',
+     sizeref: 0.15,
+     color: retweets,
+     colorscale: [[0, 'rgb(25, 150, 25)'], [1, 'rgb(150, 25, 150)']]
    }
   };
 
-  var outdata = [trace];
+  var data = [trace];
 
   // Put chart on page
   var layout = {
@@ -47,4 +56,5 @@ function makeBubbleChart(data){
   Plotly.newPlot('bubblechart', data, layout);
 };
 
-performAnalysis();
+makeBubbleChart();
+
